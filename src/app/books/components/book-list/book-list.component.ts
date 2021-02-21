@@ -2,8 +2,8 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Book } from '@app/books/book.model';
-import { BooksService } from '@app/core/books.service';
+import { Book } from '@app/books/models/book.model';
+import { BooksService } from '@app/books/services/books.service';
 
 @Component({
   selector: 'app-book-list',

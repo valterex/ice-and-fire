@@ -18,3 +18,25 @@
   overflow: auto;
   max-height: 500px;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3f51b5;
+}
+
+.autocomplete-container.mat-focused
+  .mat-form-field-outline
+  .mat-form-field-outline-start,
+.autocomplete-container.mat-focused
+  .mat-form-field-outline
+  .mat-form-field-outline-gap,
+.autocomplete-container.mat-focused
+  .mat-form-field-outline
+  .mat-form-field-outline-end {
+  border-bottom: none;
+  border-radius: 0;
+}

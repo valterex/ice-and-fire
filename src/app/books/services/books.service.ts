@@ -7,8 +7,8 @@ import {
 } from '@angular/common/http';
 
 import { Observable, of, throwError } from 'rxjs';
-import { tap, catchError, map } from 'rxjs/operators';
-import { Book } from '../books/book.model';
+import { catchError, map, mergeMap, toArray } from 'rxjs/operators';
+import { Book } from '@app/books/models/book.model';
 
 @Injectable({
   providedIn: 'root',
@@ -23,14 +23,10 @@ export class BooksService {
 
   getBooks(): Observable<Book[]> {
     return this.http.get<Book[]>(this.booksUrl, this.httpOptions).pipe(
-      map((res: any) => {
-        const booksWithIds = res.map((el) => {
-          const obj = { ...el, id: el.url.slice(-1) };
-          return obj;
-        });
-
-        return booksWithIds;
-      }),
+      map((res: any) => res),
+      mergeMap((b: any) => b),
+      map((book: any) => Object.assign({}, book, { id: book.url.slice(-1) })),
+      toArray(),
       catchError(this.handleError)
     );
   }

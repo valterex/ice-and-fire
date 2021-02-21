@@ -9,6 +9,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 
 import { BooksRoutingModule } from '@app/books/books-routing.module';
+import { SharedModule } from 'app/shared/shared.module';
 
 import { BooksComponent } from '@app/books/books.component';
 import { BookListComponent } from '@app/books/components/book-list/book-list.component';
@@ -24,6 +25,7 @@ import { BookLayoutComponent } from './components/book-layout/book-layout.compon
   ],
   imports: [
     CommonModule,
+    SharedModule,
     BooksRoutingModule,
     HttpClientModule,
     MatTableModule,
