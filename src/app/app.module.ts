@@ -7,19 +7,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { BooksModule } from '@app/books/books.module';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { LoadingComponent } from './shared/loading/loading.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LoadingComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     BooksModule,
     MatToolbarModule,
+    SharedModule,
   ],
-  exports: [LoadingComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
